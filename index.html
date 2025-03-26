@@ -8,29 +8,47 @@
 </head>
 <body>
     <header>
-        <h3>Car rental Georgia</h3>
+        <h3>Car Rental Georgia</h3>
         <input class="search" type="text" value="" placeholder="search">
+
+        <button class="spread">filters</button>
     </header>
 
     <main>
-        <select class="filter" name="" id="">
-            <option value="0">--</option>
-            <option value="asc">Ascending</option>
-            <option value="desc">Descending</option>
-        </select>
+        <div class="allFilters">
+            <select class="filter" name="" id="">
+                <option value="0">--</option>
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+                
+            </select>
+    
+            <div class="detailedFilter">
+                <div class="littleDiv">
+                    <label for="capacity">Capacity</label>
+                    <input class="capacity" type="text">
+                </div>
 
-        <div class="detailedFilter">
-            <label for="capacity">capacity</label>
-            <input class="capacity" type="text">
-            <label for="startYear">start Year</label>
-            <input class="startYear" type="text">
-            <label for="endYear">end Year</label>
-            <input class="endYear" type="text">
-            <label for="city">city</label>
-            <input class="city" type="text">
+                <div class="littleDiv">
+                    <label for="startYear">Start Year</label>
+                    <input class="startYear" type="text">
+                </div>
 
-            <button class="filterButton">Filter</button>
+                <div class="littleDiv">
+                    <label for="endYear">End Year</label>
+                    <input class="endYear" type="text">
+                </div>
+
+                <div class="littleDiv">
+                    <label for="city">City</label>
+                    <input class="city" type="text">
+                </div>
+
+    
+                <button class="filterButton">Filter</button>
+            </div>
         </div>
+
 
         <div class="cards">
 
@@ -38,6 +56,6 @@
     </main>
     
 
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
