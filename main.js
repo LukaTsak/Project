@@ -11,14 +11,21 @@ let filterButton = document.querySelector('.filterButton')
 let spread = document.querySelector('.spread')
 let allfilters = document.querySelector('.allFilters')
 let detailedFilter = document.querySelector('.detailedFilter')
+let citiesSelect = document.querySelector('.citiesFilter')
+let favBtn = document.getElementsByClassName('favourite')
 
-fetch('https://rentcar.stepprojects.ge/api/Car')
+let userNum = localStorage.getItem('num')
+
+console.log(userNum)
+
+fetch('https://rentcar.stepprojects.ge/api/Car/paginated?pageIndex=1&pageSize=30')
 .then(el => el.json())
-.then(el => printAllCards(el))
+.then(el => printAllCards(el.data))
 
 let cars = [] // to globalize array
 
 function printAllCards(array){
+    cardsDiv.innerHTML = ''
     array.forEach(el => {
         cars.push(el)
         if(el.model != null && el.brand != null && el.imageUrl1 != null){
@@ -28,8 +35,11 @@ function printAllCards(array){
                 <div class="texts">
                 <span>${el.brand} ${el.model}</span>
                 <span>${el.price}000$</span>
-                <a href="details.html?id=${el.id}">Details</a>
 
+                <div>
+                <a href="details.html?id=${el.id}">Details</a>
+                <a data-id="${el.id}" href="" class="favourite" >Favourite</a>
+                </div>
                 </div>
             </div>
         `
@@ -43,8 +53,8 @@ console.log(cars)
 search.addEventListener('input', function(){
     let searchValue = this.value.toLowerCase()
     cardsDiv.innerHTML = ''
-    cars.forEach(car => {
-        if(car.brand.toLowerCase().includes(searchValue) || car.model.toLowerCase().includes(searchValue)){
+    cars.forEach(el => {
+        if(el.brand.toLowerCase().includes(searchValue) || el.model.toLowerCase().includes(searchValue)){
             cardsDiv.innerHTML += `
             <div class="card">
                 <img src="${el.imageUrl1}" alt="there should have been an image">
@@ -70,6 +80,12 @@ filter.addEventListener('change', function(){
     else{
         printAllCards(cars)
     }
+})
+
+citiesSelect.addEventListener('change', function(){
+    fetch(`https://rentcar.stepprojects.ge/api/Car/filter?city=${citiesSelect.value}&pageIndex=1&pageSize=20`)
+   .then(el => el.json())
+   .then(el => printAllCards(el.data))
 })
 
 function filterCardsAsc(array){
@@ -147,7 +163,31 @@ spread.addEventListener('click', function(){
     detailedFilter.classList.toggle('flexwrap')
 })
 
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("favourite")) {
+        event.preventDefault();
+        let carId = event.target.getAttribute("data-id");
+        addToFavourites(carId);
+
+        event.target.classList.toggle('backgroundcolor');
+    }
+
+
+});
+
 
 // export {cars}
 
 
+function addToFavourites(carId){
+    console.log('hi')
+    console.log(carId)
+    // https://rentcar.stepprojects.ge/api/Users/592399919/favorites/957
+    fetch(`https://rentcar.stepprojects.ge/api/Users/${localStorage.getItem('num')}/favorites/${carId}`, {
+        method : "POST",
+        headers : {
+            'Content-Type' : 'application/json'
+        },
+
+    }).then(resp => console.log(resp))
+}

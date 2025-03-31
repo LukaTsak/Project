@@ -11,15 +11,26 @@ function printAllCards(el){
    
         if(5>3){
             detailedCardDiv.innerHTML += `
-            <div class="card">
+            <div class="card detailedCardVisual">
                 <img src="${el.imageUrl1}" alt="there should have been an image">
                 <div class="texts">
                 <span>${el.brand} ${el.model}</span>
                 <span>${el.price}000$</span>
-                <a href="details.html?id=${el.id}">Details</a>
+                <a href="index.html">Back</a>
 
                 </div>
             </div>
+
+        <div class="Details">
+            <span>გამოშვების წელი: ${el.year}</span>
+            <span>ტევადობა: ${el.capacity}</span>
+            <span>გადაცემატა კოლოფი: ${el.transmission}</span>
+            <span>მობილურის ნომერი: ${el.createdBy}</span>
+            <span>საწვავის ავზის მოცულობა: ${el.fuelCapacity}</span>
+            <span>ადგილმდებარეობა: ${el.city}</span>
+            <span>სიგანე: ${el.latitude}</span>
+            <span>სიგრძე: ${el.longitude}</span>
+        </div>
         `
         }  
  

@@ -2,17 +2,25 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background-color:rgb(235, 232, 229);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 header{
+    height: fit-content;
     display: flex;
     gap: 50px;
-    justify-content: center;
-    padding-left: 10px;
+    justify-content: space-between;
     padding-bottom: 20px;
     font-size: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     
+}
+
+header .first{
+    display: flex;
+    gap: 10px;
 }
 
 header input{
@@ -26,22 +34,36 @@ header input{
 header h3{
     margin: 0;
     margin-top: 10px;
+    padding-right: 50px;
 }
 
 header button{
-    margin-top: 20px;
-    height: 35px;
+    cursor: pointer;
+    margin-top: 25px;
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+header button:hover{
     width: 150px;
+    transition: all 0.5s;
 }
 
 main {
     padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .cards{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
+    width: 66%;
 
 }
 
@@ -57,6 +79,16 @@ main {
     transition: transform 0.3s ease;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    background-color:aliceblue;
+    text-align: start;
+}
+
+.card span{
+    padding-top: 10px;
+}
+
+.card:hover{
+    transform: scale(1.05);
 }
 
 .card img{
@@ -98,6 +130,12 @@ main {
 .detailedFilter button{
     width: 100px;
     border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.detailedFilter button:hover{
+    width: 150px;
+    transition: all 0.5s;
 }
 
 .texts{
@@ -114,10 +152,20 @@ main {
 .texts a{
     text-decoration: none;
     color: black;
+    width: fit-content;
     font-size: 30px;
-    padding-top: 50px;
-    padding-left: 10px;
+    margin-top: 30px;
+    transition: all 0.5s;
+    border: 1px solid black;
+    padding-left: 15px;
+    border-radius: 10px;
+    width: 110px;
 }
+
+/* .texts a:hover{
+    font-size: 35px;
+    transition: all 0.5s;
+} */
 
 .allFilters{
     display: flex;
@@ -130,6 +178,13 @@ main {
     max-width: 0;
     max-height: 0;
     overflow: hidden;
+}
+
+.allFilters select{
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
 }
 
 .spread{
@@ -151,4 +206,75 @@ main {
 
 .flexwrap{
     flex-wrap: wrap;
+}
+
+.detailedCard{
+    padding-top: 50px;
+    padding-left: 20px;
+    display: flex;
+    gap: 50px;
+}
+
+.Details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Details span{
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    width: fit-content;
+    height: 25px;
+    border: 1px solid black !important;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: transform 0.3s ease;
+    background-color:aliceblue;
+}
+
+.detailedCardVisual{
+    margin-top: 23px;
+    transform: scale(1.15);
+}
+
+.detailedCardVisual:hover{
+    transform: scale(1.15);  
+}
+
+.detailedCardVisual a{
+    padding-left: 15px;
+    border-radius: 10px;
+    width: 80px;
+}
+
+.Register{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.login{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.forms{
+    display: flex;
+    gap: 50px;
+}
+
+.loginMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.backgroundcolor{
+    background-color: blueviolet;
 }

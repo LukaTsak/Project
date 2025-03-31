@@ -8,10 +8,17 @@
 </head>
 <body>
     <header>
-        <h3>Car Rental Georgia</h3>
-        <input class="search" type="text" value="" placeholder="search">
+        <div class="first">
+            <h3>Car Rental Georgia</h3>
+            <input class="search" type="text" value="" placeholder="Search">
+    
+            <button class="spread">Filters</button>
+        </div>
 
-        <button class="spread">filters</button>
+        <div class="reglog">
+            <a href="submitPage.html">Login</a>
+            <a href="">Register</a>
+        </div>
     </header>
 
     <main>
@@ -24,6 +31,23 @@
             </select>
     
             <div class="detailedFilter">
+
+                <div class="littleDiv citiesSelect">
+                    <select class="citiesFilter" name="" id="">
+                        <option selected value="def">Cities</option>
+                        <option value="ახალციხე">ახალციხე</option>
+                        <option value="ბათუმი">ბათუმი</option>
+                        <option value="გორი">გორი</option>
+                        <option value="ზესტაფონი">ზესტაფონი</option>
+                        <option value="თბილისი">თბილისი</option>
+                        <option value="მესტია">მესტია</option>
+                        <option value="ქობულეთი">ქობულეთი</option>
+                        <option value="ქუთაისი">ქუთაისი</option>
+                        <option value="წყალტუბო">წყალტუბო</option>
+                        <option value="ხაშური">ხაშური</option>
+                    </select>
+                </div>
+
                 <div class="littleDiv">
                     <label for="capacity">Capacity</label>
                     <input class="capacity" type="text">
@@ -38,20 +62,12 @@
                     <label for="endYear">End Year</label>
                     <input class="endYear" type="text">
                 </div>
-
-                <div class="littleDiv">
-                    <label for="city">City</label>
-                    <input class="city" type="text">
-                </div>
-
-    
-                <button class="filterButton">Filter</button>
+              <button class="filterButton">Filter</button>
             </div>
         </div>
 
 
         <div class="cards">
-
         </div>
     </main>
     
