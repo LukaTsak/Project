@@ -1,77 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="first">
-            <h3>Car Rental Georgia</h3>
-            <input class="search" type="text" value="" placeholder="Search">
-    
-            <button class="spread">Filters</button>
-        </div>
+      <div class="first">
+        <h3>Car Rental Georgia</h3>
+        <input class="search" type="text" value="" placeholder="Search" />
 
-        <div class="reglog">
-            <a href="submitPage.html">Login</a>
-            <a href="">Register</a>
-        </div>
+        <button class="spread">Filters</button>
+      </div>
+
+      <div class="reglog">
+        <a href="favorites.html">Favorites</a>
+        <a href="submitPage.html">Authorization</a>
+        <button class="logout">Log out</button>
+      </div>
     </header>
 
     <main>
-        <div class="allFilters">
-            <select class="filter" name="" id="">
-                <option value="0">--</option>
-                <option value="asc">Ascending</option>
-                <option value="desc">Descending</option>
-                
+      <div class="allFilters">
+        <select class="filter" name="" id="">
+          <option value="0">--</option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+
+        <div class="detailedFilter">
+          <div class="littleDiv citiesSelect">
+            <select class="citiesFilter" name="" id="">
+              <option selected value="def">Cities</option>
+              <option value="ახალციხე">ახალციხე</option>
+              <option value="ბათუმი">ბათუმი</option>
+              <option value="გორი">გორი</option>
+              <option value="ზესტაფონი">ზესტაფონი</option>
+              <option value="თბილისი">თბილისი</option>
+              <option value="მესტია">მესტია</option>
+              <option value="ქობულეთი">ქობულეთი</option>
+              <option value="ქუთაისი">ქუთაისი</option>
+              <option value="წყალტუბო">წყალტუბო</option>
+              <option value="ხაშური">ხაშური</option>
             </select>
-    
-            <div class="detailedFilter">
+          </div>
 
-                <div class="littleDiv citiesSelect">
-                    <select class="citiesFilter" name="" id="">
-                        <option selected value="def">Cities</option>
-                        <option value="ახალციხე">ახალციხე</option>
-                        <option value="ბათუმი">ბათუმი</option>
-                        <option value="გორი">გორი</option>
-                        <option value="ზესტაფონი">ზესტაფონი</option>
-                        <option value="თბილისი">თბილისი</option>
-                        <option value="მესტია">მესტია</option>
-                        <option value="ქობულეთი">ქობულეთი</option>
-                        <option value="ქუთაისი">ქუთაისი</option>
-                        <option value="წყალტუბო">წყალტუბო</option>
-                        <option value="ხაშური">ხაშური</option>
-                    </select>
-                </div>
+          <div class="littleDiv">
+            <label for="capacity">Capacity</label>
+            <input class="capacity" type="text" />
+          </div>
 
-                <div class="littleDiv">
-                    <label for="capacity">Capacity</label>
-                    <input class="capacity" type="text">
-                </div>
+          <div class="littleDiv">
+            <label for="startYear">Start Year</label>
+            <input class="startYear" type="text" />
+          </div>
 
-                <div class="littleDiv">
-                    <label for="startYear">Start Year</label>
-                    <input class="startYear" type="text">
-                </div>
-
-                <div class="littleDiv">
-                    <label for="endYear">End Year</label>
-                    <input class="endYear" type="text">
-                </div>
-              <button class="filterButton">Filter</button>
-            </div>
+          <div class="littleDiv">
+            <label for="endYear">End Year</label>
+            <input class="endYear" type="text" />
+          </div>
+          <button class="filterButton">Filter</button>
         </div>
+      </div>
 
+      <div class="cards">
 
-        <div class="cards">
-        </div>
+      </div>
+      <button class="load">load more</button>
     </main>
-    
 
     <script type="module" src="main.js"></script>
-</body>
+  </body>
 </html>

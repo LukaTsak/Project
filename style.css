@@ -9,6 +9,7 @@ body{
 header{
     height: fit-content;
     display: flex;
+    flex-wrap: wrap;
     gap: 50px;
     justify-content: space-between;
     padding-bottom: 20px;
@@ -18,8 +19,20 @@ header{
     
 }
 
+.reglog{
+    margin-top: 15px;
+}
+
+.reglog a{
+    text-decoration: none;
+    color: black;
+
+
+}
+
 header .first{
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -69,7 +82,7 @@ main {
 
 .card{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 300px;
     height: 400px;
     background-color: #e2dddd;
@@ -100,7 +113,7 @@ main {
 }
 
 .detailedCard{
-    width: 100%;
+    width: 98%;
     height: 100vh;
 }
 
@@ -139,14 +152,28 @@ main {
 }
 
 .texts{
+    width: fit-content;
+    height: 100px;
     display: flex;
-    flex-direction: column;
+    width: 90%;
+    width: fit-content;
+    flex-direction: row;
     gap: 10px;
     padding-left: 10px;
 }
 
-.texts span{
+.spans{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 177px;
+}
+
+.card a {
+    text-decoration: none !important;
+    color: black;
     font-size: 20px;
+
 }
 
 .texts a{
@@ -154,11 +181,12 @@ main {
     color: black;
     width: fit-content;
     font-size: 30px;
-    margin-top: 30px;
+    margin-top: 0px;
     transition: all 0.5s;
     border: 1px solid black;
     padding-left: 15px;
     border-radius: 10px;
+    margin-top: 30px;
     width: 110px;
 }
 
@@ -213,6 +241,8 @@ main {
     padding-left: 20px;
     display: flex;
     gap: 50px;
+    height: fit-content;
+    padding-bottom: 150px;
 }
 
 .Details{
@@ -235,19 +265,10 @@ main {
 }
 
 .detailedCardVisual{
-    margin-top: 23px;
-    transform: scale(1.15);
+    scale: 1.1;
+    margin-top: 25px;
 }
 
-.detailedCardVisual:hover{
-    transform: scale(1.15);  
-}
-
-.detailedCardVisual a{
-    padding-left: 15px;
-    border-radius: 10px;
-    width: 80px;
-}
 
 .Register{
     display: flex;
@@ -275,6 +296,67 @@ main {
     height: 100vh;
 }
 
-.backgroundcolor{
-    background-color: blueviolet;
+
+
+.fa-star{
+    width: 10px;
+    height: 10px;
+}
+
+.bottomhalf{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 140px;
+}
+
+
+/* HTML: <div class="star"></div> */
+.star {
+    width: 50px;  
+    height: 50px;
+    aspect-ratio: 1;
+    background: #b3b1b1;
+    clip-path: polygon(50% 0,
+      calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+      calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+     ); 
+  }
+
+  .backgroundcolor{
+    background-color: rgb(238, 238, 71) !important;
+}
+
+.similars{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+
+}
+
+.logout{
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.reglog{
+    display: flex;
+    align-items: center;
+}
+
+.cardsdivv{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: fit-content;
+    width: 90%;
+}
+
+.cardsmain{
+    width: 99%;
 }
