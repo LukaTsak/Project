@@ -37,10 +37,6 @@ function listcar() {
     formData.append("Latitude", latitudeInput.value);
     formData.append("Longitude", longitudeInput.value);
   
-    if (image1Input.files[0]) formData.append("Image1", image1Input.files[0]);
-    if (image2Input.files[0]) formData.append("Image2", image2Input.files[0]);
-    if (image3Input.files[0]) formData.append("Image3", image3Input.files[0]);
-  
     fetch("https://rentcar.stepprojects.ge/api/Car", {
       method: "POST",
       headers: {

@@ -9,11 +9,12 @@ fetch(`https://rentcar.stepprojects.ge/api/Car/byPhone?PhoneNumber=${userNumber}
 function printAllCards(array) {
     array.forEach((el) => {
       if (el.model != null && el.brand != null) {
+        console.log(el.Image1)
         console.log('Print')
         container.innerHTML += `
               <div class="card">
               <a href="details.html?id=${el.id}">
-                  <img src="${el.image1}" alt="there should have been an image">
+                  <img src="${el.Image1}" alt="there should have been an imageee">
   
                   <div class="texts">
   
