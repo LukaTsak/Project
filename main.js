@@ -16,12 +16,11 @@ let favBtn = document.getElementsByClassName("favourite");
 let logoutBTN = document.querySelector(".logout");
 let loadmoreBTn = document.querySelector(".load");
 
-
 let userNum = localStorage.getItem("num");
 
 console.log(userNum);
 
-let index = 1
+let index = 1;
 
 fetch(
   `https://rentcar.stepprojects.ge/api/Car/paginated?pageIndex=${index}&pageSize=30`
@@ -29,7 +28,7 @@ fetch(
   .then((el) => el.json())
   .then((el) => printAllCards(el.data));
 
-let cars = []
+let cars = [];
 
 function printAllCards(array) {
   array.forEach((el) => {
@@ -69,7 +68,7 @@ search.addEventListener("input", function () {
       el.brand.toLowerCase().includes(searchValue) ||
       el.model.toLowerCase().includes(searchValue)
     ) {
-        cardsDiv.innerHTML += `
+      cardsDiv.innerHTML += `
         <div class="card">
         <a href="details.html?id=${el.id}">
             <img src="${el.imageUrl1}" alt="there should have been an image">
@@ -121,7 +120,7 @@ function filterCardsAsc(array) {
   cardsDiv.innerHTML = "";
   cars.forEach((el) => {
     if (el.model != null && el.brand != null && el.imageUrl1 != null) {
-        cardsDiv.innerHTML += `
+      cardsDiv.innerHTML += `
         <div class="card">
         <a href="details.html?id=${el.id}">
             <img src="${el.imageUrl1}" alt="there should have been an image">
@@ -153,7 +152,7 @@ function filterCardsDesc(array) {
   cardsDiv.innerHTML = "";
   cars.forEach((el) => {
     if (el.model != null && el.brand != null && el.imageUrl1 != null) {
-        cardsDiv.innerHTML += `
+      cardsDiv.innerHTML += `
         <div class="card">
         <a href="details.html?id=${el.id}">
             <img src="${el.imageUrl1}" alt="there should have been an image">
@@ -184,7 +183,7 @@ function detailedFilterRender(array) {
   cardsDiv.innerHTML = "";
   array.forEach((el) => {
     if (el.model != null && el.brand != null && el.imageUrl1 != null) {
-        cardsDiv.innerHTML += `
+      cardsDiv.innerHTML += `
         <div class="card">
         <a href="details.html?id=${el.id}">
             <img src="${el.imageUrl1}" alt="there should have been an image">
@@ -234,13 +233,9 @@ document.addEventListener("click", function (event) {
 });
 
 function addToFavourites(carId) {
-  console.log("hi");
-  console.log(carId);
-  // https://rentcar.stepprojects.ge/api/Users/592399919/favorites/957
   fetch(
     `https://rentcar.stepprojects.ge/api/Users/${localStorage.getItem(
-      "num"
-    )}/favorites/${carId}`,
+      "num")}/favorites/${carId}`,
     {
       method: "POST",
       headers: {
@@ -263,4 +258,4 @@ loadmoreBTn.addEventListener("click", function () {
   )
     .then((el) => el.json())
     .then((el) => printAllCards(el.data));
-})
+});

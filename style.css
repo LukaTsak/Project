@@ -345,6 +345,7 @@ main {
 
 .reglog{
     display: flex;
+    gap: 15px;
     align-items: center;
 }
 
@@ -359,4 +360,21 @@ main {
 
 .cardsmain{
     width: 99%;
+}
+
+.listForm{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+    text-align: start;
+}
+
+.cont{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    flex-direction: row;
+    text-align: center;
 }
